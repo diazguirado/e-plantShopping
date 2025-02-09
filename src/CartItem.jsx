@@ -8,7 +8,7 @@ const CartItem = ({ onContinueShopping }) => {
   const dispatch = useDispatch();
 
   // Calculate total amount for all products in the cart
-  const calculateTotalAmount = () => {
+  const calculateTotalPrice = () => {
     return cart.reduce((total, item) => {
       return total + item.quantity * parseFloat(item.cost.replace("$", ""));
     }, 0).toFixed(2); // Round to two decimal places
@@ -55,7 +55,7 @@ const CartItem = ({ onContinueShopping }) => {
 
   return (
     <div className="cart-container">
-      <h2 style={{ color: 'black' }}>Total Cart Amount: ${calculateTotalAmount()}</h2>
+      <h2 style={{ color: 'black' }}>Total Cart Amount: ${calculateTotalPrice()}</h2>
       {cart.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
