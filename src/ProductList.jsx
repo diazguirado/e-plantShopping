@@ -7,7 +7,7 @@ import { addItem, removeItem, updateQuantity } from './CartSlice';
 
 function ProductList() {
     const [showCart, setShowCart] = useState(false); 
-    const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
+    // const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
     const [addedToCart, setAddedToCart] = useState({});
     const cart = useSelector(state => state.cart.items);
 
@@ -248,7 +248,7 @@ function ProductList() {
     const handlePlantsClick = (e) => {
         console.log('handlePlantsClick');
         e.preventDefault();
-        setShowPlants(true); // Set showAboutUs to true when "About Us" link is clicked
+        // setShowPlants(true); // Set showAboutUs to true when "About Us" link is clicked
         setShowCart(false); // Hide the cart when navigating to About Us
     };
 
@@ -271,6 +271,11 @@ function ProductList() {
         return cart.reduce((total, item) => {
           return total + item.quantity;
         }, 0);
+    };
+
+    const getQuantity = (plantName) => {
+        const item = cart.find(item => item.name === plantName);
+        return item ? item.quantity : 0;
     };
 
     return (
@@ -312,9 +317,9 @@ function ProductList() {
                                 <div className="text">{plant.name}</div>
                                 <div className="text">{plant.description}</div>
                                 <div>{plant.cost}</div>
-                                <button className="product-button" onClick={() => handleAddToCart(plant)} disabled={addedToCart[plant.name]}>
-                                    {/* TODO: don't disable if plant.quantity === 0  */}
-                                    {addedToCart[plant.name] ? "Added to cart" : "Add to Cart"}
+                                <button className="product-button" onClick={() => handleAddToCart(plant)}
+                                disabled={addedToCart[plant.name] && getQuantity(plant.name) > 0}>
+                                    {addedToCart[plant.name] && getQuantity(plant.name) > 0 ? "Added to cart" : "Add to Cart"}
                                 </button>
                             </div>
                         ))}
