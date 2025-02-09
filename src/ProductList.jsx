@@ -310,13 +310,13 @@ function ProductList() {
                     {/* List of plants inside each category */}
                     <div className="product-category">
                         {categoryItem.plants.map((plant, plantIndex) => (
-                            <div className="product_main" key={plantIndex}>
+                            <div className="product-card" key={plantIndex}>
                                 <div className="img">
                                     <img src={plant.image} alt={plant.name} />
                                 </div>
-                                <div className="text">{plant.name}</div>
-                                <div className="text">{plant.description}</div>
-                                <div>{plant.cost}</div>
+                                <div className="product-title">{plant.name}</div>
+                                <div className="product-description">{plant.description}</div>
+                                <div className="product-price">{plant.cost}</div>
                                 <button className="product-button" onClick={() => handleAddToCart(plant)}
                                 disabled={addedToCart[plant.name] && getQuantity(plant.name) > 0}>
                                     {addedToCart[plant.name] && getQuantity(plant.name) > 0 ? "Added to cart" : "Add to Cart"}
