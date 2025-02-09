@@ -238,10 +238,12 @@ function ProductList() {
         textDecoration: 'none',
     }
     const handleCartClick = (e) => {
+        console.log('handleCartClick');
         e.preventDefault();
         setShowCart(true);
     };
     const handlePlantsClick = (e) => {
+        console.log('handlePlantsClick');
         e.preventDefault();
         setShowPlants(true); // Set showAboutUs to true when "About Us" link is clicked
         setShowCart(false); // Hide the cart when navigating to About Us
@@ -257,9 +259,11 @@ function ProductList() {
     };
 
     const handleContinueShopping = (e) => {
+        console.log('handleContinueShopping');
         e.preventDefault();
         setShowCart(false);
     };
+
     return (
         <div>
             <div className="navbar" style={styleObj}>
@@ -296,7 +300,10 @@ function ProductList() {
                                 <div className="text">{plant.name}</div>
                                 <div className="text">{plant.description}</div>
                                 <div>{plant.cost}</div>
-                                <button className="product-button" onClick={() => handleAddToCart(plant)}>Add to Cart</button>
+                                <button className="product-button" onClick={() => handleAddToCart(plant)} disabled={addedToCart[plant.name]}>
+                                    {/* TODO: don't disable if plant.quantity === 0  */}
+                                    {addedToCart[plant.name] ? "Added to cart" : "Add to Cart"}
+                                </button>
                             </div>
                         ))}
                     </div>

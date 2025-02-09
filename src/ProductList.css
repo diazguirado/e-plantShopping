@@ -242,8 +242,9 @@ body {
     background-color: #45a049;
   }
   
-  .product-button.added-to-cart {
-    background-color: grey; /* Grey when product is added */
+  .product-button:disabled {
+    background-color: grey;
+    cursor: not-allowed;
   }
   @media (max-width: 1200px) {
     .product-card {
