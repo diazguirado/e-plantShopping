@@ -188,6 +188,16 @@ body {
 
     
 }
+/* Image styles */
+.img img {
+    max-width: 200px;
+    max-height: 200px;
+    width: auto;
+    height: auto;
+    border-radius: 10px; /* Rounded boders */
+    object-fit: cover; /* Asegura que la imagen se ajuste sin deformarse */
+}
+
 /* Add Media Query for responsiveness */
 @media (max-width: 768px) {
     .product-card {
