@@ -198,6 +198,23 @@ body {
     object-fit: cover; /* Asegura que la imagen se ajuste sin deformarse */
 }
 
+/* Add to cart */
+.add-to-cart {
+    padding: 15px 25px;
+    font-size: 23px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 40px;
+}
+
+.add-to-cart:hover {
+    background-color: #45a049;
+}
+
 /* Add Media Query for responsiveness */
 @media (max-width: 768px) {
     .product-card {
