@@ -248,7 +248,7 @@ const handlePlantsClick = (e) => {
   };
     return (
         <div>
-             <div className="navbar" style={styleObj}>
+            <div className="navbar" style={styleObj}>
             <div className="tag">
                <div className="luxury">
                <img src="https://cdn.pixabay.com/photo/2020/08/05/13/12/eco-5465432_1280.png" alt="" />
@@ -259,7 +259,6 @@ const handlePlantsClick = (e) => {
                     </div>
                     </a>
                 </div>
-              
             </div>
             <div style={styleObjUl}>
                 <div> <a href="#" onClick={(e)=>handlePlantsClick(e)} style={styleA}>Plants</a></div>
@@ -267,13 +266,13 @@ const handlePlantsClick = (e) => {
             </div>
         </div>
         {!showCart? (
+        // Display each plant item:
         <div className="product-grid">
-
-
+            
         </div>
- ) :  (
-    <CartItem onContinueShopping={handleContinueShopping}/>
-)}
+        ) : (
+            <CartItem onContinueShopping={handleContinueShopping}/>
+        )}
     </div>
     );
 }
