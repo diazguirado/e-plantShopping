@@ -289,7 +289,7 @@ function ProductList() {
                     <h3 style={{color:'white'}}>Paradise Nursery</h3>
                     <i style={{color:'white'}}>Where Green Meets Serenity</i>
                     </div>
-                    </a>
+                </a>
                 </div>
             </div>
             <div style={styleObjUl}>

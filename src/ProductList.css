@@ -171,7 +171,6 @@ body {
     height: 70px;
     width: 70px;
     border-radius: 70%;
-    
 }
 
 .luxury {
@@ -180,6 +179,7 @@ body {
     justify-content: center;
     width: 650px;
     font-size: 19px;
+    gap: 10px;
 }
 .cart{
     color: white;
